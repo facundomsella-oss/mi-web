@@ -1,0 +1,65 @@
+/* Estilo base */
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 75vh;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('./FOTO.INICIO.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+/* Interactividad en Tarjetas */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.2) !important;
+    background-color: #f8f9fa;
+}
+
+.service-card:hover .card-title {
+    color: #0d6efd; /* Color primario de Bootstrap */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #212529 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* --- Nuevos estilos para GEOSTEEL --- */
+
+/* Estilos específicos para la marca */
+.marca-principal {
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* El "GEO" en azul */
+.marca-principal .texto-azul {
+    color: #0066cc !important; /* Forzamos el azul del logo */
+}
+
+/* El "STEEL" en negro */
+.marca-principal .texto-negro {
+    color: #1a1a1a !important; /* Forzamos el negro/gris oscuro */
+}
+
+/* Estilo para el subtítulo idéntico a la imagen */
+.subtitulo-construccion {
+    color: #4a4a4a !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 8px; /* Espaciado ancho como el cartel */
+    text-transform: uppercase;
+}
