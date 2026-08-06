@@ -1,75 +1,168 @@
-/* Estilo base */
+/* ============ BASE ============ */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+    color: #2b3a4a;
 }
 
-/* Hero Section */
+[id] {
+    scroll-margin-top: 72px;
+}
+
+/* ============ NAVBAR ============ */
+.navbar {
+    background-color: #0f223d !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    transition: color 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* ============ HERO: imagen completa y legible ============ */
 .hero-section {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('./FOTO.INICIO.jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
     background-color: #0f223d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-@media (min-width: 992px) {
-    .hero-section {
-        background-size: contain;
-    }
+.hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
-  
-/* Interactividad en Tarjetas */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15,34,61,0.55) 0%, rgba(15,34,61,0) 45%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.55);
+}
+
+.hero-content .sub {
+    color: rgba(255,255,255,0.92);
+    font-size: clamp(0.85rem, 2.5vw, 1.25rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ============ TARJETAS ============ */
 .service-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,0.2) !important;
-    background-color: #f8f9fa;
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 2.5rem rgba(15,34,61,0.18) !important;
+}
+
+.service-card .service-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(49,130,206,0.12);
+    color: #3182ce;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
 }
 
 .service-card:hover .card-title {
-    color: #0d6efd; /* Color primario de Bootstrap */
+    color: #3182ce;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #212529 !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-/* --- Nuevos estilos para GEOSTEEL --- */
-
-/* Estilos específicos para la marca */
-.marca-principal {
-    letter-spacing: 2px;
-    margin-bottom: 5px;
+/* ============ SECCIONES ============ */
+.section-soft {
+    background-color: #eef2f5;
 }
 
-/* El "GEO" en azul */
-.marca-principal .texto-azul {
-    color: #0066cc !important; /* Forzamos el azul del logo */
+/* ============ FORMULARIO ============ */
+.contact-section {
+    background-color: #eef2f5;
 }
 
-/* El "STEEL" en negro */
-.marca-principal .texto-negro {
-    color: #1a1a1a !important; /* Forzamos el negro/gris oscuro */
+.contact-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(15,34,61,0.08);
 }
 
-/* Estilo para el subtítulo idéntico a la imagen */
-.subtitulo-construccion {
-    color: #4a4a4a !important;
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 8px; /* Espaciado ancho como el cartel */
-    text-transform: uppercase;
+.contact-form .form-control {
+    border-radius: 8px;
+    border: 1px solid #d4dae1;
+    padding: 0.75rem 1rem;
 }
+
+.contact-form .form-control:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 0.2rem rgba(49,130,206,0.15);
+}
+
+.contact-form .btn-primary {
+    background-color: #0f223d;
+    border-color: #0f223d;
+    border-radius: 8px;
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #1a365d;
+    border-color: #1a365d;
+}
+
+/* ============ FOOTER ============ */
+footer {
+    background-color: #0f223d;
+}
+
+footer a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #63b3ed;
+}
+
+/* ============ SOCIAL FLOTANTE ============ */
 .social-floating {
     position: fixed;
     bottom: 100px;
@@ -90,7 +183,7 @@ body {
     color: #fff;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .social-btn:hover {
@@ -104,4 +197,26 @@ body {
 
 .social-btn.instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Estilos específicos para la marca (compatibilidad) */
+.marca-principal {
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.marca-principal .texto-azul {
+    color: #0066cc !important;
+}
+
+.marca-principal .texto-negro {
+    color: #1a1a1a !important;
+}
+
+.subtitulo-construccion {
+    color: #4a4a4a !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
 }
